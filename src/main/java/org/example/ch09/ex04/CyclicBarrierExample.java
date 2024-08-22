@@ -66,6 +66,11 @@ class Worker implements Runnable {
 
         try {
             barrier.await();
+            System.out.println("첫 번째 대기가 풀려났습니다.");
+
+            barrier.await();
+            System.out.println("두 번째 대기가 풀려났습니다.");
+
         } catch (InterruptedException | BrokenBarrierException e) {
             e.printStackTrace();
         }
